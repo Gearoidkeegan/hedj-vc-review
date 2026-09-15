@@ -1,7 +1,7 @@
 {
   "name": "vc-review",
   "description": "Critical, investor-grade review of a pitch deck, financial model or investor memorandum, with hidden-text and AI-usage checks, delivered as an IC memo, a Word document and a one-slide summary.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "author": {
     "name": "Gearoidkeegan"
   },

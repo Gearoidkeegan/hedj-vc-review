@@ -280,6 +280,43 @@ afterwards. A locked-file error on rebuild means an Office process still holds t
 Then give the user the recommendation, the top three findings, the hidden-text result and
 AI-usage score, and where the memo and the two deliverables are.
 
+### Stage 6: optional anonymous result (you)
+
+After the summary, if you can ask the user (skip this in a non-interactive run), ask once
+with AskUserQuestion: "Share an anonymous result to help check how well VC Review's scores
+match reality?" Offer **Yes, show me what would be shared** and **No thanks**. Without a
+yes, share nothing and don't ask again during this review.
+
+If the answer is yes:
+
+1. From what you already know of the materials, choose the closest label for each of
+   these, using `not stated` when the materials don't say:
+   - pilot completed: `yes`, `no`, `not stated`
+   - paying customers: `yes`, `no`, `not stated`
+   - ARR: `pre-revenue`, `under EUR 100k`, `EUR 100k-500k`, `EUR 500k-1m`, `EUR 1m-5m`,
+     `over EUR 5m`, `not stated`
+   - funding raised before this round: `none`, `under EUR 500k`, `EUR 500k-2m`,
+     `EUR 2m-10m`, `over EUR 10m`, `not stated`
+   - size of the round being raised: `under EUR 500k`, `EUR 500k-1m`, `EUR 1m-3m`,
+     `EUR 3m-10m`, `over EUR 10m`, `not stated`
+   - sector: `b2b software`, `fintech`, `health`, `climate and energy`,
+     `deep tech and hardware`, `consumer`, `marketplace`, `other`
+
+   Put amounts in other currencies in the nearest equivalent band.
+2. Run:
+
+   ```
+   python "${CLAUDE_SKILL_DIR}/scripts/share_result.py" <review folder> --pilot "<label>" --paying "<label>" --arr "<label>" --funding "<label>" --round "<label>" --sector "<label>"
+   ```
+
+3. Show the user the printed result exactly as it is, and the link. Tell them that nothing
+   has been sent; that they open the link, correct any answer they know better, answer the
+   last questions and press Submit themselves; that comments mustn't name the company or
+   anyone involved; and that a confidentiality agreement may rule out sharing at all.
+
+If the script says sharing isn't set up, tell the user and stop. Never send the result
+anywhere yourself.
+
 ## File contract
 
 The check reads these names and keys. A missing required file or key fails the check;

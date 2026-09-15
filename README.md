@@ -141,6 +141,22 @@ Practical notes:
 - The slide's documents-corrected score answers the question founders always ask: how much of this is just bad paperwork? If it barely moves, fixing typos won't save the pitch.
 - Treat negative findings about individuals as questions to put to the founders, not conclusions. Background checks rely on public sources, and people with common names get mixed up.
 
+## Sharing an anonymous result (optional)
+
+The scores haven't been checked against real outcomes yet, and anonymous results from real reviews are how that gets done. At the end of a review, Claude asks once whether you'd like to share one. Nothing is shared unless you say yes, and the plugin never sends anything itself.
+
+If you say yes, Claude shows you exactly what the result contains and gives you a link to a short web form with those answers filled in. You correct anything you know better, answer a few questions of your own, and press Submit.
+
+| Filled in from your review | Answered by you in the form |
+|---|---|
+| Plugin version and month | Your role: investor, founder, adviser, other |
+| Stage, depth and model mode | What has happened with the company so far |
+| Investability and documents-corrected scores, rounded to the nearest 5 | Whether you agree with the recommendation |
+| Recommendation, AI-usage score, whether hidden text was found | How helpful the review was, from 1 to 5 |
+| Claude's reading of pilot status, paying customers, ARR band, funding to date, round size and sector | Optional comments |
+
+The result never includes the company, the people, places, file names, exact scores or dates, or any text from the materials. Keep comments free of anything that identifies the deal, and don't share at all if a confidentiality agreement rules it out. Submitting the form is an ordinary visit to the form service's website. Results are used only in aggregate, to check and improve the scoring. A copy of what you were offered is saved as `anonymous-result.json` in the review folder.
+
 ## Personal data and GDPR
 
 Running a review means processing personal data. Pitch materials name founders, advisors and often employees, customers and investors, and the founder check searches publicly available professional sources (LinkedIn, company registries, press) for information about the founders. Where the people named, or you, are in the EU or the UK, the GDPR or UK GDPR is likely to apply.
@@ -163,7 +179,7 @@ What leaves your machine:
 
 - The materials go to Anthropic as part of your Claude Code session. That's how the model reads them.
 - The founder check and website audit run web searches and fetch public pages. The skill instructs Claude to limit those lookups to names, the company and public claims, never unpublished financials or terms. Search providers and the sites fetched see those requests.
-- Nothing else. The scripts run locally and upload nothing.
+- Nothing else, unless you choose to submit an anonymous result through the feedback form yourself (see above). The scripts run locally and upload nothing.
 
 Before your first review, and for each deal:
 
@@ -188,6 +204,8 @@ skills/vc-review/
     extract_materials.py    text, model and page extraction, and the hidden-text scan
     build_digest.py         the evidence digest and question pool
     build_deliverables.py   the consistency check, Word memo and summary slide
+    share_result.py         the optional anonymous result and pre-filled form link
+  sharing/                  feedback form questions and link settings
 agents/                     the nine agents: analyst, financial auditor, memorandum reviewer,
                             AI usage, founder check, website audit, persona, red team, synthesis
 tests/                      python -m unittest discover -s tests

@@ -1,0 +1,22 @@
+{
+  "_about": "Written by share_result.py --configure. With no form_url, sharing stays switched off and the script only prints the anonymous result.",
+  "form_url": "https://docs.google.com/forms/d/e/1FAIpQLSfcTkv5Qc5YoCy9dZsVBVhNPtIKPhIkY6ALLY2ZxFaad7AAUA/viewform?usp=pp_url",
+  "fields": {
+    "version": "entry.1943701422",
+    "month": "entry.552707921",
+    "stage": "entry.1587708259",
+    "depth": "entry.1923304087",
+    "models": "entry.884824063",
+    "score": "entry.174385202",
+    "corrected": "entry.1536948494",
+    "recommendation": "entry.1715693347",
+    "ai_usage": "entry.148954065",
+    "hidden_text": "entry.1225747678",
+    "pilot": "entry.1679935275",
+    "paying": "entry.1393180228",
+    "arr": "entry.1706545369",
+    "funding": "entry.211108646",
+    "round": "entry.1539420103",
+    "sector": "entry.10859210"
+  }
+}

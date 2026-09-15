@@ -222,6 +222,18 @@ checked for colour-vision deficiency, with labels always on so no band is identi
 colour alone. Both formats are written as raw OOXML with the standard library, because
 reviews often run on locked-down machines.
 
+### Stage 6: anonymous results for calibration
+
+The scores haven't been calibrated against real outcomes, so a review ends by offering,
+once, to share an anonymous result. `share_result.py` reduces a finished review to coarse
+answers (scores rounded to the nearest 5, the month rather than the date, bands for revenue,
+funding and round size, a sector category) and builds a pre-filled link to a feedback form. The
+reviewer corrects what they know better, adds their role, what happened with the company,
+whether they agree with the recommendation and how helpful the review was, and submits the
+form themselves. The plugin never sends anything. For calibration, the reviewer's own
+answers matter most: agreement and outcome, set against the score, show where the rubric
+is too harsh or too generous.
+
 ---
 
 ## 4. Why the pipeline is shaped this way for cost

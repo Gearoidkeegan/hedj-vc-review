@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vc-review",
+  "description": "A free Claude Code plugin for critical, investor-grade pitch reviews",
+  "owner": {
+    "name": "Gearoidkeegan"
+  },
+  "plugins": [
+    {
+      "name": "vc-review",
+      "description": "Critical, investor-grade review of a pitch deck, financial model or investor memorandum, with hidden-text and AI-usage checks, delivered as an IC memo, a Word document and a one-slide summary.",
+      "version": "2.0.0",
+      "source": "./"
+    }
+  ]
+}

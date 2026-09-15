@@ -1,0 +1,6 @@
+# Review outputs contain confidential pitch material. Never commit them.
+reviews/
+
+# Python bytecode
+__pycache__/
+*.pyc
